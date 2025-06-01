@@ -1,4 +1,8 @@
 import React from 'react';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import SendIcon from '@mui/icons-material/Send';
+import './SearchBox.css';
 import { useState } from 'react';
 
 export default function SearchBox({updateInfo}) {
@@ -44,16 +48,18 @@ export default function SearchBox({updateInfo}) {
 
   return (
     <div className="search-box">
+      <h1>Search for the weather</h1>
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Enter city name..."
-          value={city}
-          onChange={handleChange}
-          required
-        />
-        <button type="submit">Search</button>
-        {error && <p className="error-message">No such place found. Please try again.</p>}
+        <TextField id="city" label="City name" variant="outlined"
+          required value={city} onChange={handleChange} />
+
+        <br></br>
+        <br></br>
+
+        <Button variant="contained" type="submit">
+          Search
+        </Button>
+        {error && <p style={{ color: 'red' }}>No such place found. Please try again.</p>}
       </form>
     </div>
   );

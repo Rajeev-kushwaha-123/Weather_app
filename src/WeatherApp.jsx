@@ -16,7 +16,7 @@ export default function WeatherApp() {
         setWeatherInfo(newInfo);
     }
     return(
-        <div className="weather-app">
+        <div className="weather-app" style={{textAlign: "center"}}>
             <h2>Weather App</h2>
             <SearchBox updateInfo={updateInfo} />
             <InfoBox info={WeatherInfo}/>
